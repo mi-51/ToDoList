@@ -57,3 +57,29 @@ header h1{
 .box__list li button{
   margin: 0 5px;
 }
+
+@media screen and ( max-width:1024px){
+  .output-flex{
+    display: block;
+  }
+  .output-flex .todo-box,
+  .output-flex .done-box{
+  width: 90%;
+  margin: 20px auto;
+}
+@media screen and (max-width:480px){
+  .register-box{
+    margin: 20px;
+  }
+  .box__list li{
+    display: block;
+  }
+  .box__list li p{
+    padding: 10px 0 15px 5px;
+  }
+  .btn-box{
+    text-align: center;
+  }
+}
+
+}
