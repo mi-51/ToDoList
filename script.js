@@ -36,15 +36,16 @@ const createTodoList = (item) => {
   //完了<-->戻すトグルボタン要素追加
   const togglebtn = document.createElement("button");
 
-  if (item.done === false) {
-    //もし未完了タスク判定なら完了ボタン追加
-    togglebtn.innerHTML = "完了";
-    btn_box.appendChild(togglebtn);
-  } else {
-    //もし完了タスク判定なら戻すボタン追加
-    togglebtn.innerHTML = "戻す";
-    btn_box.appendChild(togglebtn);
-  }
+  //ボタンのラベルを三項演算子で判断・実行
+  const togglebtnLabel = () =>
+    item.isDone === false
+      ? (togglebtn.innerHTML = "完了")
+      : (togglebtn.innerHTML = "戻す");
+  togglebtnLabel();
+
+  //完了or戻すボタンをbtn_boxの子要素に挿入
+  btn_box.appendChild(togglebtn);
+
   //完了or戻す機能追加
   togglebtn.addEventListener("click", () => {
     toggleTodo(togglebtn);
