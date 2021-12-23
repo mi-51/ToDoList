@@ -21,7 +21,7 @@ const createTodoList = (item) => {
   //ul>li>pを作る
   ptag.appendChild(todo);
   litag.appendChild(ptag);
-  if (item.done === false) {
+  if (item.isDone === false) {
     todoList.appendChild(litag);
   } else {
     doneList.appendChild(litag);
@@ -146,7 +146,7 @@ const deleteTodo = (delbtn) => {
     }
 
     //ロールストレージのオブジェクトプロパティの更新
-    updateValue(delbtn, "delete", true, true);
+    updateValue(delbtn, "isDeleted", true, true);
   }
 };
 
@@ -162,7 +162,7 @@ const toggleTodo = (togglebtn) => {
     toggleTodo.setAttribute("class", "done-item");
 
     //ロールストレージのオブジェクトプロパティの更新。
-    updateValue(togglebtn, "done", true, false);
+    updateValue(togglebtn, "isDone", true, false);
 
     //リストを移動させて完了を戻すに変更
     doneList.appendChild(toggleTodo);
@@ -173,7 +173,7 @@ const toggleTodo = (togglebtn) => {
     toggleTodo.setAttribute("class", ""); //戻すを押したリストのクラス名を取る
 
     //ロールストレージのオブジェクトプロパティの更新。
-    updateValue(togglebtn, "done", false, false);
+    updateValue(togglebtn, "isDone", false, false);
 
     //リストを移動させて戻すを完了に変更
     todoList.appendChild(toggleTodo);
