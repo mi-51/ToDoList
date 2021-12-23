@@ -66,7 +66,7 @@ const createTodoList = (item) => {
 ---------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   const json = storage.store;
-  if (json == undefined) {
+  if (json === undefined) {
     return;
   }
   listItems = JSON.parse(json);
@@ -111,7 +111,9 @@ todoRegister.addEventListener("click", () => {
   }
 });
 
-//ローカルストレージ更新の関数
+/* ----------------------
+ローカルストレージ更新の関数
+---------------------- */
 const updateValue = (btnName, property, value, filter) => {
   const getParent = btnName.closest("div");
   const todoTxt = getParent.previousElementSibling;
@@ -122,7 +124,7 @@ const updateValue = (btnName, property, value, filter) => {
 
   if (filter) {
     //ToDoリストオブジェクトのdeleteプロパティがfalseだけのデータでフィルターをかける
-    const newlistItems = listItems.filter((item) => item[property] !== true);
+    const newlistItems = listItems.filter((item) => item[property] === false);
     listItems = newlistItems; //削除したデータを除いたオブジェクトを入れ直す
   }
   storage.store = JSON.stringify(listItems); //ローカルストレージに保存
