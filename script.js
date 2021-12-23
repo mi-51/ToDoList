@@ -90,10 +90,11 @@ todoRegister.addEventListener("click", () => {
     //以下の条件分岐で登録済みのタスクと一致する文字列のタスク登録を禁止する
     if (registeredValue === undefined) {
       //データをオブジェクトで保存
-      let item = {};
-      item.todoValue = todoValue.value; //やることの文字列
-      item.done = false; //完了かどうかのプロパティ
-      item.delete = false; //削除したかどうかのプロパティ
+      const item = {
+        todoValue: todoValue.value, //やることの文字列
+        isDone: false, //完了かどうかのプロパティ
+        isDeleted: false, //削除したかどうかのプロパティ
+      };
 
       //配列をJSONにして保存
       listItems.push(item);
