@@ -87,7 +87,7 @@ todoRegister.addEventListener("click", () => {
     );
 
     //以下の条件分岐で登録済みのタスクと一致する文字列のタスク登録を禁止する
-    if (regiValue === undefined) {
+    if (registeredValue === undefined) {
       //データをオブジェクトで保存
       let item = {};
       item.todoValue = todoValue.value; //やることの文字列
