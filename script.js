@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 todoRegister.addEventListener("click", () => {
   if (todoValue.value !== "") {
     //入力されたタスク文字列と同様のタスクがすでに登録されているか検索
-    const regiValue = listItems.find(
+    const registeredValue = listItems.find(
       (item) => item.todoValue == todoValue.value
     );
 
